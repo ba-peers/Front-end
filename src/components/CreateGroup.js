@@ -1,6 +1,8 @@
 import React from "react";
 import apiUrl from "../apiConfig";
 import { setUser } from "../services/AuthService";
+import { Button } from 'react-bootstrap';
+
 // import { getUser, onSignin } from "./services/AuthService";
 // import JoinGroup from "./JoinGroup"
 
@@ -86,9 +88,9 @@ class CreateGroup extends React.Component{
           onChange={this.handleChange}
           ></input>
 
-          <button type="submit" className="btn btn-primary">
+          <Button type="submit" variant="outline-success">
             Create Group
-          </button>
+          </Button>
         </form>
      </div>
 );

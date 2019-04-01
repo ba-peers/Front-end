@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: aquamarine;
 }
 
 code {
@@ -46,3 +48,10 @@ code {
     color: #ff173c; }
     .single li:last-child a {
     border-bottom: 0; }
+
+
+.custom{
+
+  width: 70% !important;
+  top:50px;
+}

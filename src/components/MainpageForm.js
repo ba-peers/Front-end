@@ -2,6 +2,9 @@ import React from "react";
 import CreateGroup from "./CreateGroup.js";
 import JoinGroup from "./JoinGroup.js";
 import Group from "./GroupForm";
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import { Button } from 'react-bootstrap';
+
 class MainpageForm extends React.Component{
    
     state={
@@ -37,19 +40,18 @@ class MainpageForm extends React.Component{
 
     render(){
       return(
-            <React.Fragment>
-                { this.state.membersList.length > 0 ?   <Group members={this.state.membersList} /> : (
-                <React.Fragment>
-                <form>
-                <button onClick={this.handleSubmitCreate} className="btn btn-primary"> Create group</button>
-                <button type="click" onClick={this.handleSubmit} className="btn btn-primary">Join Group</button>
-                </form>
-
-                {this.state.click===true ? <JoinGroup  setMembersList={this.setMembersList}/>:""}
-                {this.state.clickCreate===true ? <CreateGroup/> : ""}
-                </React.Fragment>
-                )}
-            </React.Fragment>
+            
+                <div>
+        
+                
+         <ButtonGroup aria-label="Basic example" className="custom">
+         <Button variant="secondary" onClick={this.handleSubmit}>Create Group</Button>
+         <Button variant="secondary" onClick={this.handleSubmit} >Join Group</Button>
+ 
+          </ButtonGroup>
+          {this.state.click===true ? <JoinGroup />:""}
+                {this.state.click===true ? <CreateGroup/> : ""}
+                </div>
 
        );
     }
