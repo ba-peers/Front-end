@@ -6,7 +6,10 @@ import SigninForm from "./components/authForm.js/SigninForm";
 import SignupForm from "./components/authForm.js/SignupForm";
 import ChangePasswordForm from "./components/authForm.js/ChangePasswordForm";
 import Home from "./components/Home";
+import MainpageForm from "./components/MainpageForm";
 import Profile from "./components/Profile";
+// import JoinGroup from "./components/JoinGroup";
+
 class App extends Component {
   state = {
     user: null,
@@ -25,13 +28,15 @@ class App extends Component {
   };
   onSignin = () => {
     this.setState({ user: getUser() });
-    this.changeActivePage("profile");
+    this.changeActivePage("main-page");
   };
+
   onSignout = () => {
     console.log("sigin out");
     this.setState({ user: null });
     Signout();
   };
+  
   render() {
     const { user, activePage } = this.state;
     return (
@@ -43,23 +48,29 @@ class App extends Component {
         />
 
         <div className="container">
-          {activePage === "home" ? <Home /> : ""}
+         {(activePage === "home" && user===null) ? <Home /> : "" }
+         {(activePage === "home" && user!==null) ? <MainpageForm/>: ""}
+          
           {activePage === "sign-in" ? (
             <SigninForm onSignin={this.onSignin} />
           ) : (
             ""
           )}
+
           {activePage === "sign-up" ? (
             <SignupForm onSignin={this.onSignin} />
           ) : (
             ""
           )}
+
           {activePage === "change-password" ? (
             <ChangePasswordForm changeActivePage={this.changeActivePage} />
           ) : (
             ""
           )}
-          {activePage === "profile" ? <Profile /> : ""}
+
+          {activePage === "profile" ? <Profile/> : ""}
+          {/* {activePage === "main-page" ? <MainpageForm/> : ""} */}
         </div>
       </div>
     );

@@ -34,9 +34,11 @@ class SigninForm extends Component {
       })
       .catch(e => console.log(e));
   };
+
   handleSubmit = e => {
     e.preventDefault();
     this.handleLoginRequest(this.state.formData);
+    console.log("hello");
   };
 
   handleChange = ({ currentTarget }) => {

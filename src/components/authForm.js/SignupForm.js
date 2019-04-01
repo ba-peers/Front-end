@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import apiUrl from "../../apiConfig";
 import { setUser } from "../../services/AuthService";
+
 class SignupForm extends Component {
   state = {
     formData: {
@@ -10,7 +11,6 @@ class SignupForm extends Component {
     },
     err: null
   };
-
   handleLoginRequest = user => {
     let url = `${apiUrl}/sign-up`;
 
@@ -25,7 +25,8 @@ class SignupForm extends Component {
     })
       .then(res => res.json())
       .then(data => {
-        if (data.error) this.setState({ err: data.error });
+        if (data.status > 299) 
+          this.setState({ err: data.message});
         else {
           setUser(data);
           this.props.onSignin();
@@ -33,6 +34,7 @@ class SignupForm extends Component {
       })
       .catch(e => console.log(e));
   };
+  
   handleSubmit = e => {
     e.preventDefault();
     this.handleLoginRequest(this.state.formData);
