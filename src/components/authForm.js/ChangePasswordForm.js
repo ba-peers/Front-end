@@ -12,9 +12,9 @@ class ChangePasswordForm extends Component {
 
   handleLoginRequest = passwords => {
     let url = `${apiUrl}/change-password`;
-
     console.log({ email: getUser().email, passwords });
     console.log(url);
+    
     fetch(url, {
       method: "PATCH",
       mode: "cors",
@@ -30,6 +30,7 @@ class ChangePasswordForm extends Component {
       })
       .catch(e => console.log(e));
   };
+
   handleSubmit = e => {
     e.preventDefault();
     this.handleLoginRequest(this.state.formData);
@@ -45,7 +46,6 @@ class ChangePasswordForm extends Component {
     return (
       <div className="pt-5 mt-5">
         <h1>Change Password</h1>
-
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Old Password</label>
@@ -63,7 +63,6 @@ class ChangePasswordForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-
           <button type="submit" className="btn btn-primary">
             Login
           </button>

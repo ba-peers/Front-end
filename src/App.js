@@ -37,6 +37,7 @@ class App extends Component {
     this.changeActivePage("home");
     Signout();
   };
+  
   render() {
     const { user, activePage } = this.state;
     return (
@@ -55,18 +56,19 @@ class App extends Component {
           ) : (
             ""
           )}
+
           {activePage === "sign-up" ? (
             <SignupForm onSignin={this.onSignin} />
           ) : (
             ""
           )}
+
           {activePage === "change-password" ? (
             <ChangePasswordForm changeActivePage={this.changeActivePage} />
           ) : (
             ""
           )}
         
-         
 
 
         </div>

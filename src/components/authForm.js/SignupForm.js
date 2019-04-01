@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import apiUrl from "../../apiConfig";
 import { setUser } from "../../services/AuthService";
+
 class SignupForm extends Component {
   state = {
     formData: {
@@ -10,7 +11,6 @@ class SignupForm extends Component {
     },
     err: null
   };
-
   handleLoginRequest = user => {
     let url = `${apiUrl}/sign-up`;
 
@@ -34,6 +34,7 @@ class SignupForm extends Component {
       })
       .catch(e => console.log(e));
   };
+  
   handleSubmit = e => {
     e.preventDefault();
     this.handleLoginRequest(this.state.formData);
