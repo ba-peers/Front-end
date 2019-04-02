@@ -1,5 +1,4 @@
 import React from 'react';
-
 class EnterChat extends React.Component{
 
     constructor(props){

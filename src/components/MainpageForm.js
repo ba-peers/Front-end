@@ -39,21 +39,39 @@ class MainpageForm extends React.Component{
         });
       };
     render(){
-      return(
+      // return(
             
-                <div>
+      //           <div>
         
                 
-         <ButtonGroup aria-label="Basic example" className="custom">
-         <Button variant="secondary" onClick={this.handleSubmitCreate}>Create Group</Button>
-         <Button variant="secondary" onClick={this.handleSubmit} >Join Group</Button>
+      //    <ButtonGroup aria-label="Basic example" className="custom">
+      //    <Button variant="secondary" onClick={this.handleSubmitCreate}>Create Group</Button>
+      //    <Button variant="secondary" onClick={this.handleSubmit} >Join Group</Button>
  
-          </ButtonGroup>
-          {this.state.click===true ? <JoinGroup />:""}
-                {this.state.clickCreate===true ? <CreateGroup/> : ""}
-                </div>
+      //     </ButtonGroup>
+      //     {this.state.click===true ? <JoinGroup />:""}
+      //           {this.state.clickCreate===true ? <CreateGroup/> : ""}
+      //           </div>
 
-       );
+      //  );
+
+      return(
+      <React.Fragment>
+      { this.state.membersList.length > 0 ?   <Group members={this.state.membersList} /> : (
+      <React.Fragment>
+      <ButtonGroup aria-label="Basic example" className="custom">
+
+      <Button variant="secondary" onClick={this.handleSubmitCreate} className="btn btn-primary"> Create group</Button>
+      <Button variant="secondary" type="click" onClick={this.handleSubmit} className="btn btn-primary">Join Group</Button>
+      </ButtonGroup>
+
+      {this.state.click===true ? <JoinGroup  setMembersList={this.setMembersList}/>:""}
+      {this.state.clickCreate===true ? <CreateGroup/> : ""}
+      </React.Fragment>
+      )}
+  </React.Fragment>
+      );
     }
+      
 }
 export default MainpageForm;
