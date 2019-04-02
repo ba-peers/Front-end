@@ -59,7 +59,6 @@ class App extends Component {
           onSignout={this.onSignout}
         />
             
-
         <div className="container">
           {activePage === "home" && user == null? <Home/> : ""}
           {activePage === "home"  && user !== null? <MainpageForm setMembersList={this.setMembersList} changeActivePage={this.changeActivePage}/> : ""}
@@ -94,12 +93,7 @@ class App extends Component {
           ) : (
             ""
           )}
-
-          //  {activePage === "enter-chat" ? (
-          //   <EnterChat changeActivePage={this.changeActivePage} />
-          // ) : (
-          //   ""
-          // )}
+        
         </div>
       </div>
     );
