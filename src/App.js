@@ -5,14 +5,15 @@ import { getUser, Signout } from "./services/AuthService";
 import SigninForm from "./components/authForm.js/SigninForm";
 import SignupForm from "./components/authForm.js/SignupForm";
 import ChangePasswordForm from "./components/authForm.js/ChangePasswordForm";
+import JoinGroup from "./components/JoinGroup";
 import Home from "./components/Home";
-// import Profile from "./components/Profile";
 import MainpageForm from "./components/MainpageForm";
 
 class App extends Component {
   state = {
     user: null,
-    activePage: "home"
+    activePage: "home",
+  
   };
   componentDidMount() {
     // check if we have a token in the local storage
@@ -21,10 +22,14 @@ class App extends Component {
       this.setState({ user });
     }
   }
-
   changeActivePage = activePage => {
-    this.setState({ activePage });
+    this.setState({ 
+      activePage: activePage
+    });
   };
+
+
+
   onSignin = () => {
     this.setState({ user: getUser() });
     // this.changeActivePage("profile");
@@ -50,7 +55,7 @@ class App extends Component {
 
         <div className="container">
           {activePage === "home" && user == null? <Home/> : ""}
-          {activePage === "home"  && user !== null? <MainpageForm/> : ""}
+          {activePage === "home"  && user !== null? <MainpageForm setMembersList={this.setMembersList} changeActivePage={this.changeActivePage}/> : ""}
           {activePage === "sign-in" ? (
             <SigninForm onSignin={this.onSignin} />
           ) : (
@@ -68,9 +73,17 @@ class App extends Component {
           ) : (
             ""
           )}
-        
 
-
+          {activePage === "group" ? (
+            <JoinGroup changeActivePage={this.changeActivePage} />
+          ) : (
+            ""
+          )}
+          {/* {activePage === "group-key" ? (
+            <GroupForm group_key={this.state.group_key} />
+          ) : (
+            ""
+          )} */}
         </div>
       </div>
     );

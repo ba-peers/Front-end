@@ -11,6 +11,7 @@ class SignupForm extends Component {
     },
     err: null
   };
+  
   handleLoginRequest = user => {
     let url = `${apiUrl}/sign-up`;
 

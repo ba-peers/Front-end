@@ -2,40 +2,25 @@ import React from "react";
 import apiUrl from "../apiConfig";
 import { setUser } from "../services/AuthService";
 // import { getUser, onSignin } from "./services/AuthService";
-
+// import JoinGroup from "./JoinGroup"
 
 class CreateGroup extends React.Component{
 
 
     state = {
        formData: {
-        // userId:null,
-        // user: null,
          name: null,
          group_key: null,
        }
      };
    
-    //  componentDidMount() {
-    //   // check if we have a token in the local storage
-    //   const user = getUser();
-    //   if (user) {
-    //     this.setState({ user });
-    //   }
-    // }
-
-
-    // onSignin = () => {
-    //   this.setState({ user: getUser() });
-    // }
 
      handleCreateRequest = data => {
-      var data = {
-        // userId: this.state.formData.userId,
+      var newData = {
         name: this.state.formData.name,
         group_key: this.state.formData.group_key
     }
-    console.log(data)
+    console.log(newData)
 
   
        let url = `${apiUrl}/new-group`;
@@ -46,7 +31,7 @@ class CreateGroup extends React.Component{
          headers: {
            "Content-type": "application/json"
          },
-         body: JSON.stringify(data)
+         body: JSON.stringify({data: newData})
        })
          .then(res => res.json())
          .then(data => {
@@ -84,13 +69,11 @@ class CreateGroup extends React.Component{
             )}
        <form onSubmit={this.handleSubmit}>
 {/* 
-
        <label>User ID</label>
           <input placeholder="Enter ID"
           name="userId"
           onChange={this.handleChange}
           ></input> */}
-
           <label> Group Name</label>
           <input placeholder="Enter Name"
           name="name"
