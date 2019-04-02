@@ -1,4 +1,5 @@
 import React from "react";
+import Spinner from 'react-bootstrap/Spinner'
 
 const authenticatedOptions = (changeActivePage, onSignout) => (
   <React.Fragment>
@@ -6,7 +7,7 @@ const authenticatedOptions = (changeActivePage, onSignout) => (
       className="nav-item"
       onClick={() => changeActivePage("change-password")}
     >
-      <div className="nav-link">Change Password</div>
+      <div className="nav-link">Change Password |</div>
     </li>
     <li className="nav-item" onClick={() => onSignout()}>
       <div className="nav-link">Sign Out</div>
@@ -18,10 +19,10 @@ const authenticatedOptions = (changeActivePage, onSignout) => (
 const unauthenticatedOptions = changeActivePage => (
   <React.Fragment>
     <li className="nav-item" onClick={() => changeActivePage("sign-in")}>
-      <div className="nav-link">Sign In</div>
+      <div className="nav-link">Sign In |</div>
     </li>
     <li className="nav-item" onClick={() => changeActivePage("sign-up")}>
-      <div className="nav-link">Sign Up</div>
+      <div className="nav-link">Sign Up |</div>
     </li>
   </React.Fragment>
 );
@@ -29,14 +30,20 @@ const unauthenticatedOptions = changeActivePage => (
 const alwaysOptions = changeActivePage => (
   <React.Fragment>
     <li className="nav-item" onClick={() => changeActivePage("home")}>
-      <div className="nav-link">Home</div>
+      <div className="nav-link">Home |</div>
     </li>
   </React.Fragment>
 );
 
 const Nav = ({ user, changeActivePage, onSignout }) => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <div className="navbar-brand">Navbar</div>
+  <nav className="navbar navbar-expand-lg navbar-dark">
+{/*   
+ <Spinner animation="bounce" variant="success" />
+  <Spinner animation="grow" variant="danger" />
+  <Spinner animation="grow" variant="warning" />
+  <Spinner animation="grow" variant="info" /> */}
+
+    <div className="navbar-brand">Team Work App</div>
     <button
       className="navbar-toggler"
       type="button"

@@ -28,7 +28,9 @@ class MainpageForm extends React.Component{
         });
       };
 
-      handleSubmitCreate = e => {
+
+
+    handleSubmitCreate = e => {
         e.preventDefault();
 
         this.setState({
@@ -36,8 +38,6 @@ class MainpageForm extends React.Component{
             click:false
         });
       };
-
-
     render(){
       return(
             
@@ -45,12 +45,12 @@ class MainpageForm extends React.Component{
         
                 
          <ButtonGroup aria-label="Basic example" className="custom">
-         <Button variant="secondary" onClick={this.handleSubmit}>Create Group</Button>
+         <Button variant="secondary" onClick={this.handleSubmitCreate}>Create Group</Button>
          <Button variant="secondary" onClick={this.handleSubmit} >Join Group</Button>
  
           </ButtonGroup>
           {this.state.click===true ? <JoinGroup />:""}
-                {this.state.click===true ? <CreateGroup/> : ""}
+                {this.state.clickCreate===true ? <CreateGroup/> : ""}
                 </div>
 
        );

@@ -2,6 +2,8 @@ import React from "react";
 import apiUrl from "../apiConfig";
 import { setUser } from "../services/AuthService";
 import { Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form'
+
 
 // import { getUser, onSignin } from "./services/AuthService";
 // import JoinGroup from "./JoinGroup"
@@ -62,37 +64,30 @@ class CreateGroup extends React.Component{
     render(){
         
         return(
-            <div className="pt-5 mt-5">
-            <h1>CREATE NEW GROUP</h1>
-            {this.state.err ? (
-              <div className="alert alert-warning"> {this.state.err} </div>
-            ) : (
-              ""
-            )}
-       <form onSubmit={this.handleSubmit}>
-{/* 
-       <label>User ID</label>
-          <input placeholder="Enter ID"
-          name="userId"
-          onChange={this.handleChange}
-          ></input> */}
-          <label> Group Name</label>
-          <input placeholder="Enter Name"
-          name="name"
-          onChange={this.handleChange}
-          ></input>
         
-          <label> Group ID</label>
-          <input placeholder="Enter ID"
-          name="group_key"
-          onChange={this.handleChange}
-          ></input>
+
+<Form onSubmit={this.handleSubmit}>
+  <Form.Group controlId="formGroupEmail"  className="Createform">
+    <Form.Label>Group Name</Form.Label>
+    <Form.Control  placeholder="Enter Group Name"
+     name="name"
+     onChange={this.handleChange}
+    />
+  </Form.Group>
+  <Form.Group controlId="formGroupPassword">
+    <Form.Label>Group Key</Form.Label>
+    <Form.Control  placeholder="Enter Group Key" 
+     name="group_key"
+     onChange={this.handleChange}
+    />
+  </Form.Group>
+
 
           <Button type="submit" variant="outline-success">
             Create Group
           </Button>
-        </form>
-     </div>
+    </Form>
+   
 );
         }
     }
