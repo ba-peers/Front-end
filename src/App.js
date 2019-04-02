@@ -8,6 +8,11 @@ import ChangePasswordForm from "./components/authForm.js/ChangePasswordForm";
 import JoinGroup from "./components/JoinGroup";
 import Home from "./components/Home";
 import MainpageForm from "./components/MainpageForm";
+import 'bootstrap';
+// import 'font-awesome/css/font-awesome.css';
+import './App.scss';
+import Chat from './components/Chat';
+import EnterChat from "./components/EnterChat";
 
 class App extends Component {
   state = {
@@ -52,6 +57,7 @@ class App extends Component {
           changeActivePage={this.changeActivePage}
           onSignout={this.onSignout}
         />
+            
 
         <div className="container">
           {activePage === "home" && user == null? <Home/> : ""}
@@ -79,11 +85,16 @@ class App extends Component {
           ) : (
             ""
           )}
-          {/* {activePage === "group-key" ? (
-            <GroupForm group_key={this.state.group_key} />
+          {activePage === "chat" ? (
+            <Chat changeActivePage={this.changeActivePage} />
           ) : (
             ""
-          )} */}
+          )}
+           {activePage === "enter-chat" ? (
+            <EnterChat changeActivePage={this.changeActivePage} />
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );

@@ -20,11 +20,11 @@ class CreateGroup extends React.Component{
    
 
      handleCreateRequest = data => {
-      var newData = {
-        name: this.state.formData.name,
-        group_key: this.state.formData.group_key
-    }
-    console.log(newData)
+    //   var newData = {
+    //     name: this.state.formData.name,
+    //     group_key: this.state.formData.group_key
+    // }
+    // console.log(newData)
 
   
        let url = `${apiUrl}/new-group`;
@@ -35,7 +35,7 @@ class CreateGroup extends React.Component{
          headers: {
            "Content-type": "application/json"
          },
-         body: JSON.stringify({data: newData})
+         body: JSON.stringify(data)
        })
          .then(res => res.json())
          .then(data => {
