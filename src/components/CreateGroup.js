@@ -13,21 +13,18 @@ class CreateGroup extends React.Component{
 
     state = {
        formData: {
-         name: null,
-         group_key: null,
+         name: '',
+         group_key:'',
        }
      };
    
 
      handleCreateRequest = data => {
-    //   var newData = {
-    //     name: this.state.formData.name,
-    //     group_key: this.state.formData.group_key
-    // }
-    // console.log(newData)
-
-  
+       console.log(data.name);
+       console.log(data.group_key);
+       
        let url = `${apiUrl}/new-group`;
+
        fetch(url, {
          mode: "cors",
          method: "POST",
@@ -64,7 +61,6 @@ class CreateGroup extends React.Component{
     render(){
         
         return(
-        
 
 <Form onSubmit={this.handleSubmit}>
   <Form.Group controlId="formGroupEmail"  className="Createform">

@@ -7,6 +7,7 @@ import SignupForm from "./components/authForm.js/SignupForm";
 import ChangePasswordForm from "./components/authForm.js/ChangePasswordForm";
 import JoinGroup from "./components/JoinGroup";
 import Home from "./components/Home";
+import MyGroup from "./components/MyGroup";
 import MainpageForm from "./components/MainpageForm";
 import 'bootstrap';
 // import 'font-awesome/css/font-awesome.css';
@@ -20,6 +21,7 @@ class App extends Component {
     activePage: "home",
   
   };
+
   componentDidMount() {
     // check if we have a token in the local storage
     const user = getUser();
@@ -27,20 +29,19 @@ class App extends Component {
       this.setState({ user });
     }
   }
+
   changeActivePage = activePage => {
     this.setState({ 
       activePage: activePage
     });
   };
 
-
-
   onSignin = () => {
     this.setState({ user: getUser() });
     // this.changeActivePage("profile");
     this.changeActivePage("mainpageform");
   };
- 
+  
   onSignout = () => {
     console.log("sigin out");
     this.setState({ user: null });
@@ -86,15 +87,19 @@ class App extends Component {
             ""
           )}
           {activePage === "chat" ? (
-            <Chat changeActivePage={this.changeActivePage} />
+          <Chat changeActivePage={this.changeActivePage} />):("")}
+
+            {activePage === "my-group" ? (
+            <MyGroup changeActivePage={this.changeActivePage} />
           ) : (
             ""
           )}
-           {activePage === "enter-chat" ? (
-            <EnterChat changeActivePage={this.changeActivePage} />
-          ) : (
-            ""
-          )}
+
+          //  {activePage === "enter-chat" ? (
+          //   <EnterChat changeActivePage={this.changeActivePage} />
+          // ) : (
+          //   ""
+          // )}
         </div>
       </div>
     );

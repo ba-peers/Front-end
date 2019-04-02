@@ -18,8 +18,7 @@ class Group extends React.Component {
                    </div>
                  </div>
                  <input className="form-control"type="text" ></input>
-            </div>
-              
+            </div> 
           );
       }
 

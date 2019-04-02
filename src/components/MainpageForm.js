@@ -18,7 +18,7 @@ class MainpageForm extends React.Component{
           membersList
         });
       };
-      
+
     handleSubmit = e => {
         e.preventDefault();
 
@@ -75,3 +75,4 @@ class MainpageForm extends React.Component{
       
 }
 export default MainpageForm;
+        

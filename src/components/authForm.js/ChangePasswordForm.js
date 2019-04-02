@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import apiUrl from "../../apiConfig";
 import { getUser } from "../../services/AuthService";
+
 class ChangePasswordForm extends Component {
   state = {
     formData: {

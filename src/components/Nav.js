@@ -9,19 +9,19 @@ const authenticatedOptions = (changeActivePage, onSignout) => (
     >
       <div className="nav-link">Change Password |</div>
     </li>
-  
-
-<li
+    
+    <li
       className="nav-item"
       onClick={() => changeActivePage("chat")}
     >
       <div className="nav-link">Chat |</div>
     </li>
+
+      
     <li
       className="nav-item"
-      onClick={() => changeActivePage("enter-chat")}
-    >
-      <div className="nav-link">Enter Chat|</div>
+      onClick={() => changeActivePage("my-group")}>
+      <div className="nav-link">My Groups</div>
     </li>
 
     <li className="nav-item" onClick={() => onSignout()}>
