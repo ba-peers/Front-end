@@ -111,15 +111,16 @@ img{
  margin-bottom: 6%;
  margin-right: -12%;
  margin-left: -12%;
-height: 500px !important;
+height: 501px !important;
 }
 
 
 .card.cardchat{
 
-  width: 500% !important;
-  height: 300% !important;
+  width: 790% !important;
+  height: 270% !important;
   
+ margin-left:-310%;
   
 }
 .card-body{
@@ -171,4 +172,15 @@ height: 500px !important;
 .btn.btn-light{
    margin-left: 80% !important;
    border-radius: 30px !important;
+}
+  /* width:200% !important;
+  /* height: 132% !important; */
+
+  /* margin-top:3px;
+   background-color: rgb(211, 190, 200);
+ margin-left:-130%;
+} */ */
+
+.side-title{
+  border-bottom: bold 7px;
 }

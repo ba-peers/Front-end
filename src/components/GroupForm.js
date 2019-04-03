@@ -15,9 +15,11 @@ class Group extends React.Component {
                 <div className="row">
                   <div className="col-sm-4">
                      <div className="single category member">
-                        <h3 className="side-title">Member</h3>
+
+                        <h3 className="side-title">Joind Members</h3>
+                
                         <ul className='list-unstyled'>
-                        {this.props.members.map(member => <li>{member.member_name}</li>)}
+                        {this.props.members.map(member=> <li>  {member.member_name}</li>)}
                         </ul>
                      </div>
                    </div>
