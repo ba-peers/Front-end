@@ -82,7 +82,6 @@ class App extends Component {
             ""
           )}
          
-
             {activePage === "my-group" ? (
             <MyGroup changeActivePage={this.changeActivePage} />
           ) : (

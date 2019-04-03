@@ -36,11 +36,12 @@ class JoinGroup extends Component{
             // this.props.setMembersList(data.member);
 
             this.handleMemberRequest(dataForm)
+            // this.componentDidMount()
           }
         })
         .catch(e => console.log(e));
     };
-
+    
       handleMemberRequest(dataForm) {
         let url = `${apiUrl}/group/${dataForm.group_key}/member`;
         
@@ -61,7 +62,6 @@ class JoinGroup extends Component{
               // this.setState({members: data.member});
 
               this.props.setMembersList(data.member);
-              this.setState({clickJoin:true})
             }
           })
           .catch(e => console.log(e));
@@ -73,42 +73,39 @@ class JoinGroup extends Component{
        
       };
    
-     handleChange=({currentTarget})=>{
+    
+   handleChange=({currentTarget})=>{
       const formData = { ...this.state.formData };
       formData[currentTarget.name] = currentTarget.value;
       this.setState({ formData });  
    }
-    render(){
-        return(
-          
+
+  render(){
+    return(      
 <React.Fragment>   
-{this.state.clickJoin===false ? 
-<Form onSubmit={this.handleSubmit}>
-  <Form.Group controlId="formGroupEmail"  className="Createform">
+  <Form onSubmit={this.handleSubmit}>
+   <Form.Group controlId="formGroupEmail"  className="Createform">
     <Form.Label>Enter Your Name</Form.Label>
-    <Form.Control  placeholder="Name"
-     name="member_name"
-     onChange={this.handleChange}
-    />
+      <Form.Control  placeholder="Name"
+      name="member_name"
+      onChange={this.handleChange}
+      />
   </Form.Group>
-  <Form.Group controlId="formGroupPassword">
-    <Form.Label>Enter Group Key</Form.Label>
-    <Form.Control  placeholder="Group Key" 
-     name="group_key"
-     onChange={this.handleChange}
-    />
-  </Form.Group>
-
-
+    <Form.Group controlId="formGroupPassword">
+      <Form.Label>Enter Group Key</Form.Label>
+      <Form.Control  placeholder="Group Key" 
+      name="group_key"
+      onChange={this.handleChange}
+      />
+  
+    </Form.Group>
           <Button type="submit" variant="outline-success">
             Join!
           </Button>
     </Form>
-    :<Group/>}
 </React.Fragment>
-
-        );
-    }
+  );
+  }
 }
 
     

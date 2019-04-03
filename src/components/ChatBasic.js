@@ -31,7 +31,6 @@ class ChatBasic extends React.Component{
 
             })
             this.setState({message: ''});
-
         }
     }
     render(){
@@ -39,7 +38,7 @@ class ChatBasic extends React.Component{
             <div className="container chatbox">
                 <div className="row">
                     <div className="col-4">
-                        <div className="card">
+                        <div className="card cardchat">
                             <div className="card-body">
                                 <div className="card-title">Global Chat</div>
                                 <hr/>

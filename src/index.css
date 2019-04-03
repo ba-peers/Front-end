@@ -115,7 +115,7 @@ height: 500px !important;
 }
 
 
-.card{
+.card.cardchat{
 
   width: 500% !important;
   height: 300% !important;
@@ -128,11 +128,6 @@ height: 500px !important;
 }
 .messages{
   height:-500% !important;
-}
-
-.card-footer{
-
-
 }
 
 .member{

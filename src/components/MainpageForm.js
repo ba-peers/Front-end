@@ -39,26 +39,10 @@ class MainpageForm extends React.Component{
         });
       };
     render(){
-      // return(
-            
-      //           <div>
-        
-                
-      //    <ButtonGroup aria-label="Basic example" className="custom">
-      //    <Button variant="secondary" onClick={this.handleSubmitCreate}>Create Group</Button>
-      //    <Button variant="secondary" onClick={this.handleSubmit} >Join Group</Button>
- 
-      //     </ButtonGroup>
-      //     {this.state.click===true ? <JoinGroup />:""}
-      //           {this.state.clickCreate===true ? <CreateGroup/> : ""}
-      //           </div>
-
-      //  );
-
       return(
       <React.Fragment>
        
-      { this.state.membersList.length > 0 ?   <Group members={this.state.membersList} /> : (
+      { this.state.membersList.length > 0 ? <Group members={this.state.membersList} /> : (
       <React.Fragment>
       <ButtonGroup aria-label="Basic example" className="custom">
 
