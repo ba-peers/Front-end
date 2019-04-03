@@ -1,5 +1,12 @@
 import React from "react";
 import io from "socket.io-client";
+import { Button } from 'react-bootstrap';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl'
+
+import Form from 'react-bootstrap/Form'
+
+
 
 class ChatBasic extends React.Component{
     constructor(props){
@@ -28,7 +35,6 @@ class ChatBasic extends React.Component{
             this.socket.emit('SEND_MESSAGE', {
                 author: this.state.username,
                 message: this.state.message
-
             })
 
             this.setState({message: ''});
@@ -42,7 +48,7 @@ class ChatBasic extends React.Component{
                     <div className="col-4">
                         <div className="card cardchat">
                             <div className="card-body">
-                                <div className="card-title">Global Chat</div>
+                                <div className="card-title">Chat Window</div>
                                 <hr/>
                                 <div className="messages">
                                     {this.state.messages.map(message => {
@@ -53,17 +59,39 @@ class ChatBasic extends React.Component{
                                 </div>
 
                             </div>
-                            <div className="card-footer">
-                                <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
-                                <br/>
-                                <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
-                                <br/>
-                                <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
+                        
+                               
+                               
+  <InputGroup className="mb-3">
+    <FormControl
+    value={this.state.username} onChange={ev => this.setState({username: ev.target.value})}
+      placeholder="username"
+      aria-label="username"
+      aria-describedby="basic-addon2"
+    />
+                               
+          
+    </InputGroup>
+
+
+    <InputGroup className="mb-3">
+    <FormControl
+    value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}
+      placeholder="message"
+      aria-label="message"
+      aria-describedby="basic-addon2"
+    />
+                               
+                                <InputGroup.Append>
+      <Button onClick={this.sendMessage} variant="outline-secondary">Button</Button>
+    </InputGroup.Append>
+    </InputGroup>
+  
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+       
         );
     }
 }

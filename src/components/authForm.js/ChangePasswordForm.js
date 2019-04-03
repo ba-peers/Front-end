@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import apiUrl from "../../apiConfig";
 import { getUser } from "../../services/AuthService";
+import { Button } from 'react-bootstrap';
+
 
 class ChangePasswordForm extends Component {
   state = {
@@ -64,9 +66,9 @@ class ChangePasswordForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
+          <Button type="submit"  variant='outline-dark' className="btn">
+            Change Password
+          </Button>
         </form>
       </div>
     );

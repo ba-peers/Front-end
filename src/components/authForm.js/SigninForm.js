@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import apiUrl from "../../apiConfig";
 import { setUser } from "../../services/AuthService";
+import { Button } from 'react-bootstrap';
+
 class SigninForm extends Component {
   state = {
     formData: {
@@ -73,9 +75,9 @@ class SigninForm extends Component {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <Button type="submit"  variant='outline-dark' className="btn">
             Login
-          </button>
+          </Button>
         </form>
       </div>
     );

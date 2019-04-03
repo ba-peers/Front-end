@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import apiUrl from "../../apiConfig";
 import { setUser } from "../../services/AuthService";
+import { Button } from 'react-bootstrap';
+
 
 class SignupForm extends Component {
   state = {
@@ -81,9 +83,9 @@ class SignupForm extends Component {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <Button type="submit"  variant='outline-dark' className="btn">
             SIGN UP
-          </button>
+          </Button>
         </form>
       </div>
     );

@@ -78,7 +78,7 @@ class CreateGroup extends React.Component{
   </Form.Group>
 
 
-          <Button type="submit" variant="outline-success">
+          <Button type="submit" variant='outline-dark'>
             Create Group
           </Button>
     </Form>

@@ -2,6 +2,8 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
 import { MDBCarouselCaption,  MDBView, MDBMask } from
 "mdbreact";
+import { Button } from 'react-bootstrap';
+
 
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
     MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn} from "mdbreact"
@@ -20,12 +22,12 @@ import { Container } from "react-bootstrap";
                       </MDBView>
                       <MDBCarouselCaption>
 
-                      <h1 className=" mainP">  <h1 className="team">TEAM,</h1>
-                                                Together <br></br>
-                                                Everyone <br></br>
-                                                Achieves  <br></br>
-                                                More</h1>
-                                                                        {/* <p> TEAM together everyone achieves more</p> */}
+                      <h1 className="team">  <h1 className="team">TEAM,</h1>
+                                                Together 
+                                                Everyone 
+                                                Achieves  
+                                                More</h1> 
+                                                                       
                       </MDBCarouselCaption>
                     </MDBCarouselItem>
                     <MDBCarouselItem itemId="2">
@@ -35,11 +37,8 @@ import { Container } from "react-bootstrap";
                       </MDBView>
                       <MDBCarouselCaption>
 
-                      <h1 className=" mainP"><h1 className="team">TEAM,</h1>
-                                                Together <br></br>
-                                                Everyone <br></br>
-                                                Achieves  <br></br>
-                                                More</h1>                      <p>Second text</p>
+                     <p className="team">
+                      "Coming together is a beginning. Keeping together is progress. Working together is success."</p>
                       </MDBCarouselCaption>
                     </MDBCarouselItem>
                     <MDBCarouselItem itemId="3">
@@ -48,12 +47,12 @@ import { Container } from "react-bootstrap";
                         <MDBMask overlay="black-slight" />
                       </MDBView>
                       <MDBCarouselCaption>
-                      <h1 className=" mainP"><h1 className="team">TEAM,</h1>
-                                                Together <br></br>
-                                                Everyone <br></br>
-                                                Achieves  <br></br>
-                                                More</h1>
-                        <p>Third text</p>
+                      <h1 className="team"><h1 className="team">TEAM,</h1>
+                                                Together 
+                                                Everyone 
+                                                Achieves 
+                                                More</h1>   
+                        
                       </MDBCarouselCaption>
                     </MDBCarouselItem>
                     <MDBCarouselItem itemId="4">
@@ -63,15 +62,14 @@ import { Container } from "react-bootstrap";
                       </MDBView>
                       <MDBCarouselCaption>
 
-                      <h1 className=" mainP"><h1 className="team">TEAM,</h1>
-                                                Together <br></br>
-                                                Everyone <br></br>
-                                                Achieves  <br></br>
-                                                More</h1>  
-                                                                     {/* <p>Team Work App is a platform where group members can work together and share documentations  where group members can work together and share documentations  where group members can work together and share documentations  where group members can work together and share documentations  </p> */}
+                      <h1 className="team">"Many ideas grow better when transplanted into another mind than the one where they sprang up"</h1>
+                                                 
+                    
                       </MDBCarouselCaption>
                     </MDBCarouselItem>
-                  </MDBCarouselInner>
+                   
+                  </MDBCarouselInner> 
+                  
                 </MDBCarousel>
       <br></br>
 <Container>
@@ -80,12 +78,12 @@ import { Container } from "react-bootstrap";
           <MDBRow>
             <MDBCarouselItem itemId="1">
               <MDBCol md="4 d-inline-block" >
-                <MDBCard className="mb-2">
+                <MDBCard className="mb-2" style={{ width: '18rem' , height: '15rem'}}>
                   {/* <MDBCardImage className="" src="https://www.colorhexa.com/333333.png" /> */}
-                  <MDBCardBody>
+                  <MDBCardBody className='cardsbody'>
                     <MDBCardTitle>About Us</MDBCardTitle>
                     <MDBCardText>
-                    Team Work App is a platform where group members can work together and share documentations  where group members can work together and share documentations  where group members can work together and share documentations  where group members can work together and share documentations.
+                    Team Work App is a platform where group members can work together and share documentations in a private workspace.
 
                     </MDBCardText>
                    
@@ -93,26 +91,32 @@ import { Container } from "react-bootstrap";
                 </MDBCard>
               </MDBCol>
               <MDBCol md="4" className="clearfix d-none d-inline-block">
-                <MDBCard className="mb-2">
+                <MDBCard className="mb-2" style={{ width: '18rem' , height: '15rem'}}>
                   {/* <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" /> */}
-                  <MDBCardBody>
-                    <MDBCardTitle>MDBCard title</MDBCardTitle>
+                  <MDBCardBody className='cardsbody'>
+                    <MDBCardTitle>Features</MDBCardTitle>
                     <MDBCardText>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                    • Admin create the group key<br></br>
+                    • Admin pass the key for members <br></br>
+                    • Members can join the group and enjoy working together
                     </MDBCardText>
                    
                   </MDBCardBody>
                 </MDBCard>
               </MDBCol>
               <MDBCol md="4" className="d-none d-inline-block">
-                <MDBCard className="mb-2">
+                <MDBCard className="mb-2" style={{ width: '18rem' , height: '15rem'}}>
                   {/* <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" /> */}
-                  <MDBCardBody>
-                    <MDBCardTitle>MDBCard title</MDBCardTitle>
+                  <MDBCardBody className='cardsbody'>
+                    <MDBCardTitle>Contact Us</MDBCardTitle>
                     <MDBCardText>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                    ✉ asmaq66@gmail.com
+                    <br></br>
+                    <br></br>
+                    ✉ badriahalshehri.cs@gmail.com
+                    <br></br>
+                    <br></br>
+                    ✆ +966500850000
                     </MDBCardText>
                 
                   </MDBCardBody>

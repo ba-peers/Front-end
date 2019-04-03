@@ -89,6 +89,7 @@ class JoinGroup extends Component{
       onChange={this.handleChange}
       />
   </Form.Group>
+<<<<<<< HEAD
     <Form.Group controlId="formGroupPassword">
       <Form.Label>Enter Group Key</Form.Label>
       <Form.Control  placeholder="Group Key" 
@@ -98,6 +99,18 @@ class JoinGroup extends Component{
   
     </Form.Group>
           <Button type="submit" variant="outline-success">
+=======
+  <Form.Group controlId="formGroupPassword">
+    <Form.Label>Enter Group Key</Form.Label>
+    <Form.Control  placeholder="Group Key" 
+     name="group_key"
+     onChange={this.handleChange}
+    />
+  </Form.Group>
+
+
+          <Button type="submit"variant='outline-dark'>
+>>>>>>> bootstrap css
             Join!
           </Button>
     </Form>
