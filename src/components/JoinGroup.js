@@ -12,6 +12,7 @@ class JoinGroup extends Component{
         group_key:null,
         member_name:''
       },
+      clickJoin:false
     };
 
     handleJoinRequest = dataForm => {
@@ -60,6 +61,7 @@ class JoinGroup extends Component{
               // this.setState({members: data.member});
 
               this.props.setMembersList(data.member);
+              this.setState({clickJoin:true})
             }
           })
           .catch(e => console.log(e));
@@ -68,6 +70,7 @@ class JoinGroup extends Component{
         handleSubmit = e => {
         e.preventDefault();
         this.handleJoinRequest(this.state.formData);
+       
       };
    
      handleChange=({currentTarget})=>{
@@ -78,8 +81,8 @@ class JoinGroup extends Component{
     render(){
         return(
           
-       
-
+<React.Fragment>   
+{this.state.clickJoin===false ? 
 <Form onSubmit={this.handleSubmit}>
   <Form.Group controlId="formGroupEmail"  className="Createform">
     <Form.Label>Enter Your Name</Form.Label>
@@ -101,8 +104,8 @@ class JoinGroup extends Component{
             Join!
           </Button>
     </Form>
-   
-
+    :<Group/>}
+</React.Fragment>
 
         );
     }

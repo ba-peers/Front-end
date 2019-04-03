@@ -1,5 +1,5 @@
 import React from "react";
-import Spinner from 'react-bootstrap/Spinner'
+// import Spinner from 'react-bootstrap/Spinner'
 
 const authenticatedOptions = (changeActivePage, onSignout) => (
   <React.Fragment>
@@ -72,11 +72,7 @@ const Nav = ({ user, changeActivePage, onSignout }) => (
         {user
           ? authenticatedOptions(changeActivePage, onSignout)
           : unauthenticatedOptions(changeActivePage)}
-        {/* {user && (
-          <li className="nav-item">
-            <div className="nav-link"> Hola, {user.email.split("@")[0]}</div>
-          </li>
-        )} */}
+      
       </ul>
     </div>
   </nav>

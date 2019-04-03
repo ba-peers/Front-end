@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import apiUrl from "../apiConfig";
 import { inspect } from "util";
+import MainpageForm from './MainpageForm';
 
 class MyGroup extends Component{
 
     state = {
         groupList:[],
         groupID:null,
-        groupJoin:[]
+        clickExit:false
     }
    
     handleDeleteRequest(groupId) {
@@ -26,9 +27,10 @@ class MyGroup extends Component{
             if (groupList.status > 299) 
               this.setState({ err: groupList.message});
             else {
-              // this.setState({members: data.member});
-              this.setMembersListgroupList(groupList);
+              
               this.componentWillMount();
+              
+              
             }
           })
           .catch(e => console.log(e));
@@ -37,17 +39,30 @@ class MyGroup extends Component{
     deleteGroup= ( e , id) => {
         e.preventDefault();
         this.handleDeleteRequest(id);
+        this.setState({
+          clickExit:true
+        });
         // this.setState({});
     }
 
+    filterGroup=( e , id) => {
+      e.preventDefault();
+      this.handleMemberGroupRequest(id);
+      // this.setState({});
+  }
+
      setMembersListgroupList = list=>{
-        // console.log("HHHHHHHHHHHHJJJJ",list)
+      
+      console.log("gggggglist",list)
+      const groupNameList=list.map(group=> group.Group);
+       console.log("yyyyyydgfvdggdvgd",groupNameList)
+      
         this.setState({ 
-            groupList:list
+            groupList:groupNameList
         });
       };
-      
-componentWillMount(){
+  componentWillMount(){
+    this.setState({clickExit:false});
         let url = `${apiUrl}/group`;
         fetch(url, {
           mode: "cors",
@@ -62,21 +77,32 @@ componentWillMount(){
             if (groupList.status > 299) 
               this.setState({ err: groupList.message});
             else {
-                // console.log("group list::::: ",groupList);
-              this.setMembersListgroupList(groupList.group);
+              // console.log("j6k6k75k754lh",groupList.user.members[1].Group)
+              this.setMembersListgroupList(groupList.user.members);
             }
           }).catch(e => console.log(e));
-    
     }
-
+//https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjRsZTzi7PhAhWQmBQKHdHVDg0QjRx6BAgBEAU&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Ficons-of-business-groups-share-your-opinions-vector-3385501&psig=AOvVaw3mvmyIsXY3qaxeEf1Jn94C&ust=1554352317701831
  render(){
      return(
-       <form>
-           {this.state.groupList.length > 0 ? <div>{this.state.groupList.map(group=> <li>{group.id}<button onClick={(e) => this.deleteGroup(e , group.id)}> DELETE </button></li>)}</div>:<h3>No groups</h3>}
-       </form>
+ <React.Fragment>
+        <div className="card flex-row flex-wrap mt-5">
+        {/* <div className="card-header border-0" >
+        </div> */}
+        <div className="card-block px-5" >
+            <h6 className="card-title text-center"> {this.state.groupList.length > 0 ? <div>{this.state.groupList.map(group=> <div>{group.name}<button className="btn btn-light mt-1 ml-5" onClick={(e) => this.deleteGroup(e , group.id)}> Exit </button></div>)}</div> : <p>you do not join in to any group</p>}</h6>
+        </div>
+        <div className="w-100"></div>
+        <div className="card-footer w-100 text-muted text-center">
+            you joined in this group
+        </div>
+    </div>
+</React.Fragment>
      );
  }
-
 }
 
 export default MyGroup;
+
+
+// this

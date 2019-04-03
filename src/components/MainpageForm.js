@@ -57,6 +57,7 @@ class MainpageForm extends React.Component{
 
       return(
       <React.Fragment>
+       
       { this.state.membersList.length > 0 ?   <Group members={this.state.membersList} /> : (
       <React.Fragment>
       <ButtonGroup aria-label="Basic example" className="custom">

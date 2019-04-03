@@ -11,7 +11,6 @@ import MyGroup from "./components/MyGroup";
 import MainpageForm from "./components/MainpageForm";
 import 'bootstrap';
 
-
 class App extends Component {
   state = {
     user: null,
