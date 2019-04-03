@@ -101,4 +101,42 @@ img{
   padding: 0%;
   margin: 0;
 } */
+.team{
+  font-size: 100px;
+ 
+}
 
+.mainCarousel{
+  top:50px;
+ margin-bottom: 6%;
+ margin-right: -12%;
+ margin-left: -12%;
+height: 500px !important;
+}
+
+
+.card{
+
+  width: 500% !important;
+  height: 300% !important;
+  
+  
+}
+.card-body{
+
+  height:700% !important;
+}
+.messages{
+  height:-500% !important;
+}
+
+.card-footer{
+
+
+}
+
+.member{
+
+  width: 500% !important;
+  height: 300% !important;
+}

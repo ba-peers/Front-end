@@ -3,6 +3,8 @@ import apiUrl from "../apiConfig";
 // import { join } from "path";
 import Group from "./GroupForm";
 // let url = `${apiUrl}/sign-in`;
+import { Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form'
 class JoinGroup extends Component{
  
     state={
@@ -75,17 +77,33 @@ class JoinGroup extends Component{
    }
     render(){
         return(
-           <React.Fragment>
-            <div>** Welcom **</div>
-            <form onSubmit={this.handleSubmit}>
-               <label> ID </label>
-               <input name='member_name' placeholder="User Name" onChange={this.handleChange}></input>
-               <input name='group_key' placeholder="enter group id" onChange={this.handleChange}></input>
-               <button type="submit" className="btn btn-primary"> Join </button>
-             </form>
-            
-             {/* <Group members={this.state.members} /> */}
-           </React.Fragment>
+          
+       
+
+<Form onSubmit={this.handleSubmit}>
+  <Form.Group controlId="formGroupEmail"  className="Createform">
+    <Form.Label>Enter Your Name</Form.Label>
+    <Form.Control  placeholder="Name"
+     name="member_name"
+     onChange={this.handleChange}
+    />
+  </Form.Group>
+  <Form.Group controlId="formGroupPassword">
+    <Form.Label>Enter Group Key</Form.Label>
+    <Form.Control  placeholder="Group Key" 
+     name="group_key"
+     onChange={this.handleChange}
+    />
+  </Form.Group>
+
+
+          <Button type="submit" variant="outline-success">
+            Join!
+          </Button>
+    </Form>
+   
+
+
         );
     }
 }

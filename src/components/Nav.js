@@ -10,12 +10,12 @@ const authenticatedOptions = (changeActivePage, onSignout) => (
       <div className="nav-link">Change Password |</div>
     </li>
     
-    <li
+    {/* <li
       className="nav-item"
       onClick={() => changeActivePage("chat")}
     >
       <div className="nav-link">Chat |</div>
-    </li>
+    </li> */}
 
       
     <li
@@ -52,11 +52,6 @@ const alwaysOptions = changeActivePage => (
 
 const Nav = ({ user, changeActivePage, onSignout }) => (
   <nav className="navbar navbar-expand-lg navbar-dark">
-{/*   
- <Spinner animation="bounce" variant="success" />
-  <Spinner animation="grow" variant="danger" />
-  <Spinner animation="grow" variant="warning" />
-  <Spinner animation="grow" variant="info" /> */}
 
     <div className="navbar-brand">Team Work App</div>
     <button

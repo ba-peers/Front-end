@@ -11,7 +11,7 @@ import { Container } from "react-bootstrap";
             return (
               <MDBContainer >
             
-                <MDBCarousel activeItem={1} length={4} showControls={false} showIndicators={true} className="z-depth-1">
+                <MDBCarousel activeItem={1} length={4} showControls={false} showIndicators={true} className="z-depth-1 mainCarousel">
                   <MDBCarouselInner>
                     <MDBCarouselItem itemId="1">
                       <MDBView>
@@ -20,9 +20,11 @@ import { Container } from "react-bootstrap";
                       </MDBView>
                       <MDBCarouselCaption>
 
-                      <h1 className=" mainP">TEAM,
-                                               <br></br>
-                                                together everyone achieves more</h1>
+                      <h1 className=" mainP">  <h1 className="team">TEAM,</h1>
+                                                Together <br></br>
+                                                Everyone <br></br>
+                                                Achieves  <br></br>
+                                                More</h1>
                                                                         {/* <p> TEAM together everyone achieves more</p> */}
                       </MDBCarouselCaption>
                     </MDBCarouselItem>
@@ -33,9 +35,11 @@ import { Container } from "react-bootstrap";
                       </MDBView>
                       <MDBCarouselCaption>
 
-                      <h1 className=" mainP">TEAM,
-                                               <br></br>
-                                                together everyone achieves more</h1>                        <p>Second text</p>
+                      <h1 className=" mainP"><h1 className="team">TEAM,</h1>
+                                                Together <br></br>
+                                                Everyone <br></br>
+                                                Achieves  <br></br>
+                                                More</h1>                      <p>Second text</p>
                       </MDBCarouselCaption>
                     </MDBCarouselItem>
                     <MDBCarouselItem itemId="3">
@@ -44,9 +48,11 @@ import { Container } from "react-bootstrap";
                         <MDBMask overlay="black-slight" />
                       </MDBView>
                       <MDBCarouselCaption>
-                      <h1 className=" mainP">TEAM,
-                                               <br></br>
-                                                together everyone achieves more</h1>
+                      <h1 className=" mainP"><h1 className="team">TEAM,</h1>
+                                                Together <br></br>
+                                                Everyone <br></br>
+                                                Achieves  <br></br>
+                                                More</h1>
                         <p>Third text</p>
                       </MDBCarouselCaption>
                     </MDBCarouselItem>
@@ -57,9 +63,11 @@ import { Container } from "react-bootstrap";
                       </MDBView>
                       <MDBCarouselCaption>
 
-                      <h1 className=" mainP">TEAM,
-                                               <br></br>
-                                                together everyone achieves more</h1>   
+                      <h1 className=" mainP"><h1 className="team">TEAM,</h1>
+                                                Together <br></br>
+                                                Everyone <br></br>
+                                                Achieves  <br></br>
+                                                More</h1>  
                                                                      {/* <p>Team Work App is a platform where group members can work together and share documentations  where group members can work together and share documentations  where group members can work together and share documentations  where group members can work together and share documentations  </p> */}
                       </MDBCarouselCaption>
                     </MDBCarouselItem>

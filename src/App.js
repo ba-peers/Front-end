@@ -10,10 +10,7 @@ import Home from "./components/Home";
 import MyGroup from "./components/MyGroup";
 import MainpageForm from "./components/MainpageForm";
 import 'bootstrap';
-// import 'font-awesome/css/font-awesome.css';
-import './App.scss';
-import Chat from './components/Chat';
-import EnterChat from "./components/EnterChat";
+
 
 class App extends Component {
   state = {
@@ -85,8 +82,7 @@ class App extends Component {
           ) : (
             ""
           )}
-          {activePage === "chat" ? (
-          <Chat changeActivePage={this.changeActivePage} />):("")}
+         
 
             {activePage === "my-group" ? (
             <MyGroup changeActivePage={this.changeActivePage} />
