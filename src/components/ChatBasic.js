@@ -30,9 +30,11 @@ class ChatBasic extends React.Component{
                 message: this.state.message
 
             })
+
             this.setState({message: ''});
         }
     }
+    
     render(){
         return (
             <div className="container chatbox">

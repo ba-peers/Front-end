@@ -4,13 +4,12 @@ import JoinGroup from "./JoinGroup.js";
 import Group from "./GroupForm";
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import { Button } from 'react-bootstrap';
-
+import App from '../App.js'
 class MainpageForm extends React.Component{
    
     state={
         click:false,
         clickCreate:false,
-        membersList: []
     }
 
     setMembersList = membersList => {
@@ -32,29 +31,30 @@ class MainpageForm extends React.Component{
 
     handleSubmitCreate = e => {
         e.preventDefault();
-
         this.setState({
             clickCreate:true,
             click:false
         });
       };
+
+      // changeActivePage=a=>{
+      //    return "group";
+      // };
+
     render(){
       return(
       <React.Fragment>
-       
-      { this.state.membersList.length > 0 ? <Group members={this.state.membersList} /> : (
+      {/* {this.state.membersList.length > 0 ? <Group members={this.state.membersList} /> : ( */}
       <React.Fragment>
       <ButtonGroup aria-label="Basic example" className="custom">
-
       <Button variant="secondary" onClick={this.handleSubmitCreate} className="btn btn-primary"> Create group</Button>
       <Button variant="secondary" type="click" onClick={this.handleSubmit} className="btn btn-primary">Join Group</Button>
       </ButtonGroup>
-
-      {this.state.click===true ? <JoinGroup  setMembersList={this.setMembersList}/>:""}
+      {this.state.click===true ? <JoinGroup changeToGroupForm={this.props.changeToGroupForm} setMembersList={this.setMembersList}/>:""}
       {this.state.clickCreate===true ? <CreateGroup/> : ""}
       </React.Fragment>
-      )}
-  </React.Fragment>
+      {/* )} */}
+      </React.Fragment>
       );
     }
       

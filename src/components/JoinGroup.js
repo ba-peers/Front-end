@@ -59,9 +59,7 @@ class JoinGroup extends Component{
               this.setState({ err: data.message});
             else {
               console.log('yeah*****',data.member)
-              // this.setState({members: data.member});
-
-              this.props.setMembersList(data.member);
+              this.props.changeToGroupForm(data.member)
             }
           })
           .catch(e => console.log(e));

@@ -36,7 +36,7 @@ const unauthenticatedOptions = changeActivePage => (
 
 const alwaysOptions = changeActivePage => (
   <React.Fragment>
-    <li className="nav-item" onClick={() => changeActivePage("home")}>
+    <li className="nav-item" onClick={() => { console.log('go to home'); changeActivePage("home"); }}>
       <div className="nav-link">Home |</div>
     </li>
   </React.Fragment>

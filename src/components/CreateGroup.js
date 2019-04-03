@@ -17,7 +17,6 @@ class CreateGroup extends React.Component{
          group_key:'',
        }
      };
-   
 
      handleCreateRequest = data => {
        console.log(data.name);

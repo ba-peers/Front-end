@@ -86,15 +86,10 @@ class MyGroup extends Component{
  render(){
      return(
  <React.Fragment>
-        <div className="card flex-row flex-wrap mt-5">
-        {/* <div className="card-header border-0" >
-        </div> */}
-        <div className="card-block px-5" >
-            <h6 className="card-title text-center"> {this.state.groupList.length > 0 ? <div>{this.state.groupList.map(group=> <div>{group.name}<button className="btn btn-light mt-1 ml-5" onClick={(e) => this.deleteGroup(e , group.id)}> Exit </button></div>)}</div> : <p>you do not join in to any group</p>}</h6>
-        </div>
-        <div className="w-100"></div>
-        <div className="card-footer w-100 text-muted text-center">
-            you joined in this group
+        <div>
+        <div className="container-fluid">
+             <h4 className="header">My Group</h4>
+            <h6> {this.state.groupList.length > 0 ? <div>{this.state.groupList.map(group=> <li className="list-group-item">{group.name}<button className="btn btn-light mt-1 ml-5" onClick={(e) => this.deleteGroup(e , group.id)}> Exit </button></li>)}</div> : <p>you do not join in to any group</p>}</h6>
         </div>
     </div>
 </React.Fragment>

@@ -8,6 +8,7 @@ import ChangePasswordForm from "./components/authForm.js/ChangePasswordForm";
 import JoinGroup from "./components/JoinGroup";
 import Home from "./components/Home";
 import MyGroup from "./components/MyGroup";
+import GroupForm from "./components/GroupForm";
 import MainpageForm from "./components/MainpageForm";
 import 'bootstrap';
 
@@ -15,7 +16,7 @@ class App extends Component {
   state = {
     user: null,
     activePage: "home",
-  
+    membersList: []
   };
 
   componentDidMount() {
@@ -27,14 +28,22 @@ class App extends Component {
   }
 
   changeActivePage = activePage => {
-    this.setState({ 
+    console.log('changeActivePage g', activePage)
+    this.setState({
       activePage: activePage
     });
   };
 
+  changeToGroupForm = (members) => {
+    this.setState({
+      activePage: "group-form",
+      membersList: members
+    })
+  }
   onSignin = () => {
     this.setState({ user: getUser() });
     // this.changeActivePage("profile");
+    console.log("sigin in");
     this.changeActivePage("mainpageform");
   };
   
@@ -47,6 +56,7 @@ class App extends Component {
   
   render() {
     const { user, activePage } = this.state;
+    console.log(user)
     return (
       <div>
         <Nav
@@ -57,7 +67,9 @@ class App extends Component {
             
         <div className="container">
           {activePage === "home" && user == null? <Home/> : ""}
-          {activePage === "home"  && user !== null? <MainpageForm setMembersList={this.setMembersList} changeActivePage={this.changeActivePage}/> : ""}
+          {activePage === "mainpageform"  && user !== null? <MainpageForm changeToGroupForm={this.changeToGroupForm} changeActivePage={this.changeActivePage}/> : ""}
+          {activePage === "home"  && user !== null? <MainpageForm changeToGroupForm={this.changeToGroupForm} changeActivePage={this.changeActivePage}/> : ""}
+
           {activePage === "sign-in" ? (
             <SigninForm onSignin={this.onSignin} />
           ) : (
@@ -87,7 +99,11 @@ class App extends Component {
           ) : (
             ""
           )}
-        
+          {activePage === "group-form" ? (
+            <GroupForm members={this.state.membersList} />
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );

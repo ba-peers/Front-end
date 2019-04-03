@@ -123,9 +123,9 @@ height: 500px !important;
   
 }
 .card-body{
-
   height:700% !important;
 }
+
 .messages{
   height:-500% !important;
 }
@@ -160,4 +160,15 @@ height: 500px !important;
 .btn btnexit{
   width: 20px !important;
   background: #ff173c !important;
+}
+.list-group-item{
+  margin-top: 15px;
+  width:55%;
+  border-radius: 30px !important;
+  border-color: #333 !important;
+}
+
+.btn.btn-light{
+   margin-left: 80% !important;
+   border-radius: 30px !important;
 }
