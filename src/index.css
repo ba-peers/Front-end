@@ -126,12 +126,12 @@ height: 501px !important;
 .messages{
   height:-500% !important;
 }
-
+/* 
 .member{
 
   width: 500% !important;
   height: 300% !important;
-}
+} */
 .wrapper {
   background-color: #339966
 }
@@ -142,11 +142,11 @@ height: 501px !important;
   padding-bottom: 15px;
   color: #FFF;
 }
-
+/* 
 .card{
   width:50%;
   background: rgba(255,0,0,0.1);
-}
+} */
 .card-block{
   background: rgba(255,0,0,0.1);
   width: 100% !important;
@@ -169,13 +169,14 @@ height: 501px !important;
    margin-left: 80% !important;
    border-radius: 30px !important;
 }
-  /* width:200% !important;
-  /* height: 132% !important; */
 
-  /* margin-top:3px;
+.member{
+  width:200% !important;
+  height: 132% !important; 
+  margin-top:3px;
    background-color: rgb(211, 190, 200);
  margin-left:-130%;
-} */ */
+} 
 
 .side-title{
   border-bottom: bold 7px;

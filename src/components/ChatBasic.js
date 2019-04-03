@@ -13,7 +13,6 @@ class ChatBasic extends React.Component{
         super(props);
 
         this.state = {
-            username: '',
             message: '',
             messages: []
         };
@@ -33,7 +32,7 @@ class ChatBasic extends React.Component{
         this.sendMessage = ev => {
             ev.preventDefault();
             this.socket.emit('SEND_MESSAGE', {
-                author: this.state.username,
+                author: this.props.username,
                 message: this.state.message
             })
 
@@ -63,14 +62,6 @@ class ChatBasic extends React.Component{
                                
                                
   <InputGroup className="mb-3">
-    <FormControl
-    value={this.state.username} onChange={ev => this.setState({username: ev.target.value})}
-      placeholder="username"
-      aria-label="username"
-      aria-describedby="basic-addon2"
-    />
-                               
-          
     </InputGroup>
 
 

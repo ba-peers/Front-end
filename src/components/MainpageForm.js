@@ -58,7 +58,7 @@ class MainpageForm extends React.Component{
       {this.state.click===true ? <JoinGroup changeToGroupForm={this.props.changeToGroupForm} setMembersList={this.setMembersList}/>:""}
       {this.state.clickCreate===true ? <CreateGroup/> : ""}
       </React.Fragment>
-      )}
+    
   </React.Fragment>
 
       );

@@ -27,7 +27,7 @@ class Group extends React.Component {
             </div>  
            </Col>
            <Col>
-             <div> <ChatBasic /></div>
+             <div> <ChatBasic username={this.props.members[this.props.members.length -1].member_name}/></div>
            </Col>
       </Row>
   </Container>
