@@ -8,7 +8,9 @@ class Group extends React.Component {
 
       render() {
           return(
-    <Container>
+            
+
+    <Container className="container">
          <Row>
            <Col>
             <div className="container">
@@ -30,8 +32,9 @@ class Group extends React.Component {
              <div> <ChatBasic username={this.props.members[this.props.members.length -1].member_name}/></div>
            </Col>
       </Row>
+      
   </Container>
-            
+ 
           );
       }
 

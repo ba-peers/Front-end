@@ -129,6 +129,8 @@ height: 501px !important;
 /* 
 .member{
 
+/* .member{
+
   width: 500% !important;
   height: 300% !important;
 } */
@@ -169,10 +171,10 @@ height: 501px !important;
    margin-left: 80% !important;
    border-radius: 30px !important;
 }
-
 .member{
   width:200% !important;
-  height: 132% !important; 
+   height: 132% !important; 
+
   margin-top:3px;
    background-color: rgb(211, 190, 200);
  margin-left:-130%;
