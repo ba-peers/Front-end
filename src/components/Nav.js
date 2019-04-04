@@ -3,12 +3,7 @@ import React from "react";
 
 const authenticatedOptions = (changeActivePage, onSignout) => (
   <React.Fragment>
-    <li
-      className="nav-item"
-      onClick={() => changeActivePage("change-password")}
-    >
-      <div className="nav-link">Change Password |</div>
-    </li>
+   
       
     <li
       className="nav-item"

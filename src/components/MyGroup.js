@@ -88,8 +88,8 @@ class MyGroup extends Component{
  <React.Fragment>
         <div>
         <div className="container-fluid">
-             <h4 className="header">My Group</h4>
-            <h6> {this.state.groupList.length > 0 ? <div>{this.state.groupList.map(group=> <li className="list-group-item">{group.name}<button className="btn btn-light mt-1 ml-5" onClick={(e) => this.deleteGroup(e , group.id)}> Exit </button></li>)}</div> : <p>you do not join in to any group</p>}</h6>
+             <h4 className="teams">My Groups</h4>
+            <h6> {this.state.groupList.length > 0 ? <div>{this.state.groupList.map(group=> <li className="list-group-item">{group.name}<button className="btn btn-dark mt-1 ml-4" onClick={(e) => this.deleteGroup(e , group.id)}> Exit </button></li>)}</div> : <p>you do not join in to any group</p>}</h6>
         </div>
     </div>
 </React.Fragment>
