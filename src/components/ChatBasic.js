@@ -74,7 +74,7 @@ class ChatBasic extends React.Component{
     />
                                
                                 <InputGroup.Append>
-      <Button onClick={this.sendMessage} variant="outline-secondary">Button</Button>
+      <Button onClick={this.sendMessage} variant="outline-secondary">Send</Button>
     </InputGroup.Append>
     </InputGroup>
   

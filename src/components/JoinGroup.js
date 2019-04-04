@@ -58,7 +58,6 @@ class JoinGroup extends Component{
             if (data.status > 299) 
               this.setState({ err: data.message});
             else {
-              console.log('yeah*****',data.member)
               this.props.changeToGroupForm(data.member)
             }
           })
@@ -81,6 +80,7 @@ class JoinGroup extends Component{
   render(){
     return(      
 <React.Fragment>   
+  
   <Form onSubmit={this.handleSubmit}>
    <Form.Group controlId="formGroupEmail"  className="Createform">
     <Form.Label>Enter Your Name</Form.Label>
@@ -89,6 +89,7 @@ class JoinGroup extends Component{
       onChange={this.handleChange}
       />
   </Form.Group>
+
   <Form.Group controlId="formGroupPassword">
     <Form.Label>Enter Group Key</Form.Label>
     <Form.Control  placeholder="Group Key" 
@@ -96,7 +97,6 @@ class JoinGroup extends Component{
      onChange={this.handleChange}
     />
   </Form.Group>
-
 
           <Button type="submit"variant='outline-dark'>
             Join!

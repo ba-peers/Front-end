@@ -8,8 +8,6 @@ class Group extends React.Component {
 
       render() {
           return(
-            
-
     <Container className="container">
          <Row>
            <Col>
@@ -17,9 +15,7 @@ class Group extends React.Component {
                 <div className="row">
                   <div className="col-sm-4">
                      <div className="single category member">
-
                         <h3 className="side-title">Joind Members</h3>
-                
                         <ul className='list-unstyled'>
                         {this.props.members.map(member=> <li>  {member.member_name}</li>)}
                         </ul>
@@ -32,7 +28,6 @@ class Group extends React.Component {
              <div> <ChatBasic username={this.props.members[this.props.members.length -1].member_name}/></div>
            </Col>
       </Row>
-      
   </Container>
  
           );

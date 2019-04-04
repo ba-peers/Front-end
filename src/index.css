@@ -113,10 +113,10 @@ height: 501px !important;
 
 .card.cardchat{
 
-  width: 790% !important;
-  height: 270% !important;
+  width: 720% !important;
+  height: 200% !important;
   
- margin-left:-310%;
+ margin-left:-300%;
   
 }
 .card-body{
@@ -172,12 +172,13 @@ height: 501px !important;
    border-radius: 30px !important;
 }
 .member{
-  width:200% !important;
-   height: 132% !important; 
-
+  width:164% !important;
+   height: 120% !important; 
   margin-top:3px;
-   background-color: rgb(211, 190, 200);
- margin-left:-130%;
+   /* background-color: rgb(211, 190, 200); */
+ margin-left:-81%;
+ background-color: rgba(250, 250, 250, 0.795) !important;
+color:rgb(97, 173, 224);
 } 
 
 .side-title{
