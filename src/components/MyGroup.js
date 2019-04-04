@@ -62,7 +62,9 @@ class MyGroup extends Component{
         });
       };
 
-  componentDidMount(){
+ 
+      
+  componentWillMount(){
     this.setState({clickExit:false});
         let url = `${apiUrl}/group`;
         fetch(url, {
@@ -83,14 +85,13 @@ class MyGroup extends Component{
             }
           }).catch(e => console.log(e));
     }
-//https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjRsZTzi7PhAhWQmBQKHdHVDg0QjRx6BAgBEAU&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Ficons-of-business-groups-share-your-opinions-vector-3385501&psig=AOvVaw3mvmyIsXY3qaxeEf1Jn94C&ust=1554352317701831
  render(){
      return(
  <React.Fragment>
         <div>
         <div className="container-fluid">
-             <h4 className="teams">My Groups</h4>
-            <h6> {this.state.groupList.length > 0 ? <div>{this.state.groupList.map(group=> <li className="list-group-item">{group.name}<button className="btn btn-dark mt-1 ml-4" onClick={(e) => this.deleteGroup(e , group.id)}> Exit </button></li>)}</div> : <p>you do not join in to any group</p>}</h6>
+             <h4 className="header">My Group</h4>
+            <h6> {this.state.groupList.length > 0 ? <div>{this.state.groupList.map(group=> <li className="list-group-item">{group.name}<button className="btn btn-light mt-1 ml-5" onClick={(e) => this.deleteGroup(e , group.id)}> Exit </button></li>)}</div> : <p>you do not join in to any group</p>}</h6>
         </div>
     </div>
 </React.Fragment>

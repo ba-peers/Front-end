@@ -56,10 +56,7 @@ class ChatBasic extends React.Component{
                                         )
                                     })}
                                 </div>
-
-                            </div>
-                        
-                               
+                            </div>          
                                
   <InputGroup className="mb-3">
     </InputGroup>

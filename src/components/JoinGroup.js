@@ -15,6 +15,7 @@ class JoinGroup extends Component{
       clickJoin:false
     };
 
+     // access to database and create memeber 
     handleJoinRequest = dataForm => {
       let url = `${apiUrl}/group/${dataForm.group_key}`;
       
@@ -32,16 +33,13 @@ class JoinGroup extends Component{
           if (data.status > 299) 
             this.setState({ err: data.message});
           else {
-            // console.log('what is it?',dataForm.group_key)
-            // this.props.setMembersList(data.member);
-
-            this.handleMemberRequest(dataForm)
-            // this.componentDidMount()
+            this.handleMemberRequest(dataForm) // view all member 
           }
         })
         .catch(e => console.log(e));
     };
-    
+
+    // view all member in one group
       handleMemberRequest(dataForm) {
         let url = `${apiUrl}/group/${dataForm.group_key}/member`;
         
@@ -63,11 +61,9 @@ class JoinGroup extends Component{
           })
           .catch(e => console.log(e));
       };
-
         handleSubmit = e => {
         e.preventDefault();
         this.handleJoinRequest(this.state.formData);
-       
       };
    
     
@@ -80,7 +76,6 @@ class JoinGroup extends Component{
   render(){
     return(      
 <React.Fragment>   
-  
   <Form onSubmit={this.handleSubmit}>
    <Form.Group controlId="formGroupEmail"  className="Createform">
     <Form.Label>Enter Your Name</Form.Label>
@@ -89,15 +84,12 @@ class JoinGroup extends Component{
       onChange={this.handleChange}
       />
   </Form.Group>
-
   <Form.Group controlId="formGroupPassword">
     <Form.Label>Enter Group Key</Form.Label>
     <Form.Control  placeholder="Group Key" 
      name="group_key"
-     onChange={this.handleChange}
-    />
+     onChange={this.handleChange}/>
   </Form.Group>
-
           <Button type="submit"variant='outline-dark'>
             Join!
           </Button>
