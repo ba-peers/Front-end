@@ -28,8 +28,8 @@ class MyGroup extends Component{
               this.setState({ err: groupList.message});
             else {
               
-              this.componentWillMount();
-              
+              this.componentDidMount();
+      
               
             }
           })
@@ -61,7 +61,8 @@ class MyGroup extends Component{
             groupList:groupNameList
         });
       };
-  componentWillMount(){
+
+  componentDidMount(){
     this.setState({clickExit:false});
         let url = `${apiUrl}/group`;
         fetch(url, {
