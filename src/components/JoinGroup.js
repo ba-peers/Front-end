@@ -20,8 +20,8 @@ class JoinGroup extends Component{
       let url = `${apiUrl}/group/${dataForm.group_key}`;
       
       fetch(url, {
-        mode: "cors",
-        credentials: "include",
+        // mode: "cors",
+        // credentials: "include",
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -44,8 +44,8 @@ class JoinGroup extends Component{
         let url = `${apiUrl}/group/${dataForm.group_key}/member`;
         
         fetch(url, {
-          mode: "cors",
-          credentials: "include",
+          // mode: "cors",
+          // credentials: "include",
           method: "GET",
           headers: {
             "Content-type": "application/json"
