@@ -26,8 +26,8 @@ class CreateGroup extends React.Component{
 
        fetch(url, {
          mode: "cors",
-         method: "POST",
-         credentials: "include",
+        //  method: "POST",
+        //  credentials: "include",
          headers: {
            "Content-type": "application/json"
          },
